@@ -3,4 +3,84 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string-array name="data_food_photo">
+        <item>@drawable/aglio_olio</item>
+        <item>@drawable/fried_chicken</item>
+        <item>@drawable/krabby_patty</item>
+        <item>@drawable/lasagna</item>
+        <item>@drawable/onigiri</item>
+        <item>@drawable/pizza</item>
+        <item>@drawable/soba</item>
+        <item>@drawable/spaghetti</item>
+        <item>@drawable/sushi</item>
+        <item>@drawable/taco</item>
+    </string-array>
+
+    <string-array name="data_food_name">
+        <item>Aglio Olio</item>
+        <item>Fried Chicken</item>
+        <item>Krabby Patty</item>
+        <item>Lasagna</item>
+        <item>Onigiri</item>
+        <item>Pizza</item>
+        <item>Soba</item>
+        <item>Spaghetti</item>
+        <item>Sushi</item>
+        <item>Taco</item>
+    </string-array>
+
+    <string-array name="data_food_price">
+        <item>Rp. 15.000</item>
+        <item>Rp. 15.000</item>
+        <item>Rp. 15.000</item>
+        <item>Rp. 15.000</item>
+        <item>Rp. 15.000</item>
+        <item>Rp. 15.000</item>
+        <item>Rp. 15.000</item>
+        <item>Rp. 15.000</item>
+        <item>Rp. 15.000</item>
+        <item>Rp. 15.000</item>
+    </string-array>
+
+    <string-array name="data_food_desc">
+        <item>This is Aglio Olio</item>
+        <item>This is Fried Chicken</item>
+        <item>This is Krabby Patty</item>
+        <item>This is Lasagna</item>
+        <item>This is Onigiri</item>
+        <item>This is Pizza</item>
+        <item>This is Soba</item>
+        <item>This is Spaghetti</item>
+        <item>This is Sushi</item>
+        <item>This is Taco</item>
+    </string-array>
+
+    <string-array name="data_beverage_photo">
+        <item>@drawable/boba_thai_tea</item>
+        <item>@drawable/coke</item>
+        <item>@drawable/milk</item>
+        <item>@drawable/mochacinno</item>
+    </string-array>
+
+    <string-array name="data_beverage_name">
+        <item>Boba Thai Tea</item>
+        <item>Coke</item>
+        <item>Milk</item>
+        <item>Mochacinno</item>
+    </string-array>
+
+    <string-array name="data_beverage_price">
+        <item>Rp. 5000</item>
+        <item>Rp. 5000</item>
+        <item>Rp. 5000</item>
+        <item>Rp. 5000</item>
+    </string-array>
+
+    <string-array name="data_beverage_desc">
+        <item>This is Boba Thai Tea</item>
+        <item>This is Coke</item>
+        <item>This is Milk</item>
+        <item>This is Mochacinno</item>
+    </string-array>
 </resources>
