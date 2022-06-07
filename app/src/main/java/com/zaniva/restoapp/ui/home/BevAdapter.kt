@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.zaniva.restoapp.R
 import com.zaniva.restoapp.dataclass.Menu
 
-class Adapter(private val listItem: ArrayList<Menu>) : RecyclerView.Adapter<Adapter.ListViewHolder>() {
+class BevAdapter(private val listItem: ArrayList<Menu>) : RecyclerView.Adapter<BevAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {

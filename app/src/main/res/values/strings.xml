@@ -71,10 +71,10 @@
     </string-array>
 
     <string-array name="data_beverage_price">
-        <item>Rp. 5000</item>
-        <item>Rp. 5000</item>
-        <item>Rp. 5000</item>
-        <item>Rp. 5000</item>
+        <item>Rp. 5.000</item>
+        <item>Rp. 5.000</item>
+        <item>Rp. 5.000</item>
+        <item>Rp. 5.000</item>
     </string-array>
 
     <string-array name="data_beverage_desc">
@@ -82,5 +82,33 @@
         <item>This is Coke</item>
         <item>This is Milk</item>
         <item>This is Mochacinno</item>
+    </string-array>
+
+    <string-array name="data_pack_photo">
+        <item>@drawable/salmon_teriyaki_set</item>
+        <item>@drawable/yakiniku_set</item>
+        <item>@drawable/yakiniku_wagyu_set</item>
+        <item>@drawable/burget_set</item>
+    </string-array>
+
+    <string-array name="data_pack_name">
+        <item>Salmon Teriyaki Set</item>
+        <item>Yakiniku Set</item>
+        <item>Wagyu Yakiniku Set</item>
+        <item>Burger Set</item>
+    </string-array>
+
+    <string-array name="data_pack_price">
+        <item>Rp. 40.000</item>
+        <item>Rp. 30.000</item>
+        <item>Rp. 30.000</item>
+        <item>Rp. 60.000</item>
+    </string-array>
+
+    <string-array name="data_pack_desc">
+        <item>This is Salmon Teriyaki Set</item>
+        <item>This is Yakiniku Set</item>
+        <item>This is One of the Premium Meat Series, Wagyu Yakiniku Set</item>
+        <item>This is Burget Set</item>
     </string-array>
 </resources>

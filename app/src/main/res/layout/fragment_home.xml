@@ -90,7 +90,7 @@
             app:layout_constraintTop_toBottomOf="@+id/rv_minuman"
             android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
-            android:text="Menu Minuman"
+            android:text="Menu Paket"
             android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="@color/orange"
