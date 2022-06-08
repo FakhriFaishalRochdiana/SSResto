@@ -106,12 +106,12 @@ class HomeFragment : Fragment() {
             val dataPrice = resources.getStringArray(R.array.data_beverage_price)
             val dataDescription = resources.getStringArray(R.array.data_beverage_desc)
             val dataPhoto = resources.obtainTypedArray(R.array.data_beverage_photo)
-            val listFoodMenu = ArrayList<Menu>()
+            val listBevMenu = ArrayList<Menu>()
             for (i in dataName.indices) {
                 val bev = Menu(dataName[i],dataPrice[i], dataDescription[i], dataPhoto.getResourceId(i, -1))
-                listFoodMenu.add(bev)
+                listBevMenu.add(bev)
             }
-            return listFoodMenu
+            return listBevMenu
         }
 
     private val listPackageMenu: ArrayList<Menu>
@@ -120,12 +120,12 @@ class HomeFragment : Fragment() {
             val dataPrice = resources.getStringArray(R.array.data_pack_price)
             val dataDescription = resources.getStringArray(R.array.data_pack_desc)
             val dataPhoto = resources.obtainTypedArray(R.array.data_pack_photo)
-            val listFoodMenu = ArrayList<Menu>()
+            val listPackMenu = ArrayList<Menu>()
             for (i in dataName.indices) {
                 val food = Menu(dataName[i],dataPrice[i], dataDescription[i], dataPhoto.getResourceId(i, -1))
-                listFoodMenu.add(food)
+                listPackMenu.add(food)
             }
-            return listFoodMenu
+            return listPackMenu
         }
 
     override fun onDestroyView() {
