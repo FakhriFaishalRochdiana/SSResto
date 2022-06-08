@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.zaniva.restoapp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_mytray"
         tools:layout="@layout/fragment_dashboard" />
 
 </navigation>

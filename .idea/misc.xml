@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/Users/Udel/AndroidStudioProjects/RestoApp/app/src/main/res/layout/activity_detail.xml" value="0.25" />
         <entry key="..\:/Users/Udel/AndroidStudioProjects/RestoApp/app/src/main/res/layout/activity_main.xml" value="0.35280797101449274" />
-        <entry key="..\:/Users/Udel/AndroidStudioProjects/RestoApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.18958333333333333" />
+        <entry key="..\:/Users/Udel/AndroidStudioProjects/RestoApp/app/src/main/res/layout/activity_payment.xml" value="0.33" />
+        <entry key="..\:/Users/Udel/AndroidStudioProjects/RestoApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.361" />
         <entry key="..\:/Users/Udel/AndroidStudioProjects/RestoApp/app/src/main/res/layout/fragment_home.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/Udel/AndroidStudioProjects/RestoApp/app/src/main/res/layout/pop_up_pay.xml" value="0.33" />
         <entry key="..\:/Users/Udel/AndroidStudioProjects/RestoApp/app/src/main/res/layout/rv_item.xml" value="0.33" />
         <entry key="..\:/Users/Udel/AndroidStudioProjects/RestoApp/app/src/main/res/layout/rv_tray.xml" value="0.33" />
         <entry key="..\:/Users/Udel/AndroidStudioProjects/RestoApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3484375" />

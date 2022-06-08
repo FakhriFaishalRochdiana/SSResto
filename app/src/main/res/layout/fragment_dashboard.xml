@@ -88,5 +88,48 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="15dp"/>
 
+        <TextView
+            android:id="@+id/tv_label_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@id/rv_paket"
+            app:layout_constraintTop_toBottomOf="@+id/rv_paket"
+            android:text="Total:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/rv_paket"
+            app:layout_constraintTop_toTopOf="@+id/tv_label_total"
+            android:text="Rp. 45.000"
+            android:textColor="@color/orange"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_checkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingEnd="15dp"
+            android:paddingStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_total"
+            app:layout_constraintTop_toBottomOf="@+id/tv_total"
+            android:text="Checkout"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@color/orange"
+            />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

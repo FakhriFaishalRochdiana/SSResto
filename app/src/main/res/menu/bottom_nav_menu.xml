@@ -9,6 +9,6 @@
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/tray"
-        android:title="@string/title_dashboard" />
+        android:title="@string/title_mytray" />
 
 </menu>

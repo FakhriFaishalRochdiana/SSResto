@@ -1,22 +1,23 @@
-package com.zaniva.restoapp.ui.dashboard
+package com.zaniva.restoapp.ui.payment
 
-import android.content.Intent
+import android.app.Dialog
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.util.Log
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import android.view.Window
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.zaniva.restoapp.R
-import com.zaniva.restoapp.databinding.FragmentDashboardBinding
+import com.zaniva.restoapp.databinding.ActivityPaymentBinding
 import com.zaniva.restoapp.dataclass.TrayItem
-import com.zaniva.restoapp.ui.payment.PaymentActivity
+import com.zaniva.restoapp.ui.dashboard.BevTrayAdapter
+import com.zaniva.restoapp.ui.dashboard.FoodTrayAdapter
+import com.zaniva.restoapp.ui.dashboard.PackTrayAdapter
 
-class DashboardFragment : Fragment() {
-
-    private var _binding: FragmentDashboardBinding? = null
+class PaymentActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPaymentBinding
     private lateinit var adapter: FoodTrayAdapter
     private lateinit var adapter2: BevTrayAdapter
     private lateinit var adapter3: PackTrayAdapter
@@ -24,61 +25,51 @@ class DashboardFragment : Fragment() {
     private val trayBev = ArrayList<TrayItem>()
     private val trayPack = ArrayList<TrayItem>()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityPaymentBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+        supportActionBar?.title = "Confirm Payment"
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        
-        _binding = FragmentDashboardBinding.bind(view)
+        val price = intent.getStringExtra("Price")
+        Log.d("Harga", price.toString())
 
         if (trayFood.isEmpty()){
             trayFood.addAll(trayFoodMenu)
             adapter = FoodTrayAdapter(trayFood)
-            adapter.hideBtn(false)
+            adapter.hideBtn(true)
         }
 
         if (trayBev.isEmpty()){
             trayBev.addAll(trayBeveragesMenu)
             adapter2 = BevTrayAdapter(trayBev)
-            adapter2.hideBtn(false)
+            adapter2.hideBtn(true)
         }
 
         if (trayPack.isEmpty()){
             trayPack.addAll(trayPackageMenu)
             adapter3 = PackTrayAdapter(trayPack)
-            adapter3.hideBtn(false)
+            adapter3.hideBtn(true)
         }
 
         binding.apply {
+
             rvMakanan.setHasFixedSize(true)
-            rvMakanan.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
+            rvMakanan.layoutManager = LinearLayoutManager(this@PaymentActivity, RecyclerView.VERTICAL, false)
             rvMakanan.adapter = adapter
             rvMinuman.setHasFixedSize(true)
-            rvMinuman.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
+            rvMinuman.layoutManager = LinearLayoutManager(this@PaymentActivity, RecyclerView.VERTICAL, false)
             rvMinuman.adapter = adapter2
             rvPaket.setHasFixedSize(true)
-            rvPaket.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
+            rvPaket.layoutManager = LinearLayoutManager(this@PaymentActivity, RecyclerView.VERTICAL, false)
             rvPaket.adapter = adapter3
-            tvTotal.text = "Rp. 280.000"
-            tvCheckout.setOnClickListener {
-                Intent(requireContext(), PaymentActivity::class.java).also {
-                    it.putExtra("Price", tvTotal.text)
-                    startActivity(it)
-                }
+            tvBill.text = price
+            tvEmoney.setOnClickListener {
+                showCustomDialog("E-money")
+            }
+            tvCash.setOnClickListener {
+                showCustomDialog("Cash")
             }
 
         }
@@ -128,10 +119,23 @@ class DashboardFragment : Fragment() {
             }
             return listPackMenu
         }
-
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun showCustomDialog(state: String){
+        if (state == "E-money" || state == "Cash"){
+            val dialog = Dialog(this)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setCancelable(true)
+            dialog.setContentView(R.layout.pop_up_pay)
+            val btnOk: View = dialog.findViewById(R.id.container_ok)
+            btnOk.setOnClickListener {
+                dialog.dismiss()
+                finish()
+            }
+            dialog.setOnDismissListener {
+                dialog.dismiss()
+                finish()
+            }
+            dialog.show()
+        }
     }
+
 }

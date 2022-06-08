@@ -42,36 +42,45 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         _binding = FragmentHomeBinding.bind(view)
-        listFood.addAll(listFoodMenu)
-        adapter = Adapter(listFood)
-        adapter.setOnItemClickCallback(object : Adapter.OnItemClickCallback{
-            override fun onItemClicked(data: Menu) {
-                Intent(requireContext(), DetailActivity::class.java).also {
-                    it.putExtra("Data", data)
-                    startActivity(it)
+
+        if (listFood.isEmpty()){
+            listFood.addAll(listFoodMenu)
+            adapter = Adapter(listFood)
+            adapter.setOnItemClickCallback(object : Adapter.OnItemClickCallback{
+                override fun onItemClicked(data: Menu) {
+                    Intent(requireContext(), DetailActivity::class.java).also {
+                        it.putExtra("Data", data)
+                        startActivity(it)
+                    }
                 }
-            }
-        })
-        listBev.addAll(listBeveragesMenu)
-        adapter2 = BevAdapter(listBev)
-        adapter2.setOnItemClickCallback(object : BevAdapter.OnItemClickCallback{
-            override fun onItemClicked(data: Menu) {
-                Intent(requireContext(), DetailActivity::class.java).also {
-                    it.putExtra("Data", data)
-                    startActivity(it)
+            })
+        }
+
+        if (listBev.isEmpty()){
+            listBev.addAll(listBeveragesMenu)
+            adapter2 = BevAdapter(listBev)
+            adapter2.setOnItemClickCallback(object : BevAdapter.OnItemClickCallback{
+                override fun onItemClicked(data: Menu) {
+                    Intent(requireContext(), DetailActivity::class.java).also {
+                        it.putExtra("Data", data)
+                        startActivity(it)
+                    }
                 }
-            }
-        })
-        listPack.addAll(listPackageMenu)
-        adapter3 = PackAdapter(listPack)
-        adapter3.setOnItemClickCallback(object : PackAdapter.OnItemClickCallback{
-            override fun onItemClicked(data: Menu) {
-                Intent(requireContext(), DetailActivity::class.java).also {
-                    it.putExtra("Data", data)
-                    startActivity(it)
+            })
+        }
+
+        if (listPack.isEmpty()){
+            listPack.addAll(listPackageMenu)
+            adapter3 = PackAdapter(listPack)
+            adapter3.setOnItemClickCallback(object : PackAdapter.OnItemClickCallback{
+                override fun onItemClicked(data: Menu) {
+                    Intent(requireContext(), DetailActivity::class.java).also {
+                        it.putExtra("Data", data)
+                        startActivity(it)
+                    }
                 }
-            }
-        })
+            })
+        }
 
         binding.apply {
             rvMakanan.setHasFixedSize(true)

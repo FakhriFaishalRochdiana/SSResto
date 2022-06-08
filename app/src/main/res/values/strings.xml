@@ -3,6 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_mytray">My Tray</string>
 
     <string-array name="data_food_photo">
         <item>@drawable/aglio_olio</item>
@@ -99,10 +100,10 @@
     </string-array>
 
     <string-array name="data_pack_price">
-        <item>Rp. 40.000</item>
-        <item>Rp. 30.000</item>
-        <item>Rp. 30.000</item>
-        <item>Rp. 60.000</item>
+        <item>Rp. 50.000</item>
+        <item>Rp. 50.000</item>
+        <item>Rp. 50.000</item>
+        <item>Rp. 50.000</item>
     </string-array>
 
     <string-array name="data_pack_desc">
