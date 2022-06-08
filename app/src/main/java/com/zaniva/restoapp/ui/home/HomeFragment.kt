@@ -14,6 +14,7 @@ import com.zaniva.restoapp.R
 import com.zaniva.restoapp.databinding.FragmentHomeBinding
 import com.zaniva.restoapp.dataclass.Menu
 import com.zaniva.restoapp.ui.detail.DetailActivity
+import com.zaniva.restoapp.ui.more.MoreActivity
 
 class HomeFragment : Fragment() {
 
@@ -92,6 +93,24 @@ class HomeFragment : Fragment() {
             rvPaket.setHasFixedSize(true)
             rvPaket.layoutManager = LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
             rvPaket.adapter = adapter3
+            tvMakanan.setOnClickListener {
+                Intent(requireContext(), MoreActivity::class.java).also {
+                    it.putExtra("Type", "Makanan")
+                    startActivity(it)
+                }
+            }
+            tvMinuman.setOnClickListener {
+                Intent(requireContext(), MoreActivity::class.java).also {
+                    it.putExtra("Type", "Minuman")
+                    startActivity(it)
+                }
+            }
+            tvPaket.setOnClickListener {
+                Intent(requireContext(), MoreActivity::class.java).also {
+                    it.putExtra("Type", "Paket")
+                    startActivity(it)
+                }
+            }
         }
     }
 

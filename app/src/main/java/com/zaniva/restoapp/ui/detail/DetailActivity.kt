@@ -36,6 +36,7 @@ class DetailActivity : AppCompatActivity() {
     private fun setBtn() {
         var count = 0
         binding.apply {
+            tvAmount.text = count.toString()
             ivAdd.setOnClickListener {
                 count += 1
                 tvAmount.text = count.toString()
@@ -48,7 +49,7 @@ class DetailActivity : AppCompatActivity() {
                 }
                 tvAmount.text = count.toString()
             }
-            ivAdd.setOnClickListener {
+            btAdd.setOnClickListener {
                 finish()
             }
         }
