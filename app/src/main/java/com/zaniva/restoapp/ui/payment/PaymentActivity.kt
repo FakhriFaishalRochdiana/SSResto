@@ -1,6 +1,7 @@
 package com.zaniva.restoapp.ui.payment
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.zaniva.restoapp.R
 import com.zaniva.restoapp.databinding.ActivityPaymentBinding
 import com.zaniva.restoapp.dataclass.TrayItem
+import com.zaniva.restoapp.ui.chef.ChefActivity
 import com.zaniva.restoapp.ui.dashboard.BevTrayAdapter
 import com.zaniva.restoapp.ui.dashboard.FoodTrayAdapter
 import com.zaniva.restoapp.ui.dashboard.PackTrayAdapter
@@ -128,11 +130,12 @@ class PaymentActivity : AppCompatActivity() {
             val btnOk: View = dialog.findViewById(R.id.container_ok)
             btnOk.setOnClickListener {
                 dialog.dismiss()
-                finish()
             }
             dialog.setOnDismissListener {
                 dialog.dismiss()
-                finish()
+                Intent(this, ChefActivity::class.java).also {
+                    startActivity(it)
+                }
             }
             dialog.show()
         }
